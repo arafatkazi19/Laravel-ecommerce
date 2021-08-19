@@ -17,6 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Brand API Routes
 $router->group(['prefix'=>'brand'], function() use ($router){
+
+	$router->get('/brands','Api\ApiBrandController@index');
 	$router->post('/store-brand','Api\ApiBrandController@storeBrand');
+	$router->post('/update-brand','Api\ApiBrandController@updateBrand');
+	$router->get('/delete-brand/{id}','Api\ApiBrandController@deleteBrand');
+
 });
