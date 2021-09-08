@@ -37,7 +37,7 @@
     <script src="{{asset('/')}}/admin/ckeditor/samples/js/sample.js"></script>
     <link rel="stylesheet" href="{{asset('/')}}/admin/ckeditor/samples/css/samples.css">
     <link rel="stylesheet" href="{{asset('/')}}/admin/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
-
+    @yield('data-table-css')
 </head>
 
 <body>
@@ -432,7 +432,7 @@
 <script>
     initSample();
 </script>
-
+@stack('scripts')
 </body>
 
 </html>

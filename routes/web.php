@@ -144,7 +144,7 @@ Route::get('/home', [
     'as'=>'/home'
 ]);
 
-Route::group(['middleware' => 'manageOrder'], function () {
+// Route::group(['middleware' => 'manageOrder'], function () {
     //
     Route::get('/category/add-category', [
         'uses'=>'CategoryController@addCategory',
@@ -294,6 +294,6 @@ Route::group(['middleware' => 'manageOrder'], function () {
         'as'=>'delete-order'
     ]);
 
-});
+// });
 
 

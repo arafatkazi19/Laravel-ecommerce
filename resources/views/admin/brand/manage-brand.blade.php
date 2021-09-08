@@ -1,9 +1,12 @@
 @extends('admin.master')
-
+@section('data-table-css')
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap4.min.css">
+@endsection
 @section('body')
     <div class="panel">
         <div class="panel-body">
-            <table class="table table-bordered">
+            <table id="brand-table" class="table table-bordered">
+                <thead>
                 <tr>
                     <th>Sl No.</th>
                     <th>brand Name</th>
@@ -11,6 +14,8 @@
                     <th>Publication Status</th>
                     <th>Action</th>
                 </tr>
+                </thead>
+                <tbody>
                 @php($i=1)
                 @foreach($brands as $brand)
                     <tr>
@@ -33,17 +38,22 @@
                         </td>
                     </tr>
                 @endforeach
+            </tbody>
             </table>
 
         </div>
 
     </div>
-
-
-
-
-
-
-
 @endsection
+@push('scripts')
+    <script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.11.1/js/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+    $('#brand-table').DataTable();
+});
+    </script>
+@endpush
 
